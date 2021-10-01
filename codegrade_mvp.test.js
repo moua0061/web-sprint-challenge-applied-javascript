@@ -25,6 +25,7 @@ describe('TASK 1 - Header', () => {
   test('[1] returns a header with the correct heading (element, attrs and text)', () => {
     expect(header.querySelector('div.header>h1').textContent).toMatch(/foo/i)
   })
+
   test('[2] returns a header with the correct date (element, attrs and text)', () => {
     expect(header.querySelector('div.header>span.date').textContent).toMatch(/bar/i)
   })
