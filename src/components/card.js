@@ -1,3 +1,12 @@
+import { headerAppender } from "./header";
+
+
+
+
+
+
+
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -17,7 +26,37 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+
+  const divClass = document.createElement('div');
+  divClass.classList.add('card');
+
+  const headlineDiv = document.createElement('div');
+  headlineDiv.classList.add('headline');
+  headlineDiv.textContent = article.headline;
+  divClass.appendChild(headlineDiv);
+  console.log(headlineDiv);
+
+  const authorDiv = document.createElement('div');
+  authorDiv.classList.add('author');
+  divClass.appendChild(authorDiv);
+
+  const imgDiv = document.createElement('div');
+  imgDiv.classList.add('img-container');
+  authorDiv.appendChild(imgDiv);
+
+  const authorImg = document.createElement('img');
+  authorImg.src = article.authorPhoto;
+  imgDiv.appendChild(authorImg);
+
+  const span = document.createElement('span');
+span.textContent = `By ${article.authorName}`;
+  authorDiv.appendChild(span);
+
+  return divClass;
 }
+
+
+import axios from 'axios';
 
 const cardAppender = (selector) => {
   // TASK 6
@@ -28,6 +67,30 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+  
+  const cardContainer = document.querySelector(selector);
+
+  axios.get(`http://localhost:5000/api/articles`)
+  .then(resp => {
+    console.log(resp);
+    // console.log(Object.keys(resp.data.articles))
+    // for (let i=0; i < Object.Keys(resp.data.articles).length; i++){
+    //   console.log(resp.data.articles))
+    // }
+
+    Object.keys(resp.data.articles).forEach(article => {
+   
+      const art = resp.data.articles[article]
+      art.forEach((element) => {
+        cardContainer.appendChild(Card(element))
+      })
+    })
+
+  })
+  .catch(err => {
+    //do something if failed
+    console.log('Your shit ain\'t working !!!!!');
+  })
 }
 
 export { Card, cardAppender }
