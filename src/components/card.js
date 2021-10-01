@@ -73,10 +73,6 @@ const cardAppender = (selector) => {
   axios.get(`http://localhost:5000/api/articles`)
   .then(resp => {
     console.log(resp);
-    // console.log(Object.keys(resp.data.articles))
-    // for (let i=0; i < Object.Keys(resp.data.articles).length; i++){
-    //   console.log(resp.data.articles))
-    // }
 
     Object.keys(resp.data.articles).forEach(article => {
       const newArray = resp.data.articles[article]
