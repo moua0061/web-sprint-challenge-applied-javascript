@@ -28,14 +28,14 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 ### Instructions
 
 - [x] Navigate to the root of the project with your command line.
-- [ ] Run `npm install` to download the dependencies listed in the `package.json` file.
-- [ ] Run `npm start` to compile the project and serve it.
-- [ ] Navigate Chrome to `http://localhost:3000`
-- [ ] In a separate terminal, run `npm test` to run tests.
+- [x] Run `npm install` to download the dependencies listed in the `package.json` file.
+- [x] Run `npm start` to compile the project and serve it.
+- [x] Navigate Chrome to `http://localhost:3000`
+- [x] In a separate terminal, run `npm test` to run tests.
 
 **Steps Required for MVP:**
 
-- [ ] Steps 1 and 2 are explained inside the `src/components/header.js` file.
+- [x] Steps 1 and 2 are explained inside the `src/components/header.js` file.
 - [ ] Steps 3 and 4 are explained inside the `src/components/tabs.js` file.
 - [ ] Steps 5 and 6 are explained inside the `src/components/card.js` file.
 
@@ -60,7 +60,12 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+    It is Document Object Model.
 2. What is an event?
+    It is a user interaction with a website.
 3. What is an event listener?
+    It is the traveling process and subsequent action by the user.
 4. Why would we convert a NodeList into an Array?
+    Because the NodeList shows how many there are of an element with its length so we can iterate it.
 5. What is a component?
+    It involves several parts of HTML, CSS and JS brought together for reuse in a site or app. It is use reusable, DRY and can stand alone.
