@@ -79,9 +79,8 @@ const cardAppender = (selector) => {
     // }
 
     Object.keys(resp.data.articles).forEach(article => {
-   
-      const art = resp.data.articles[article]
-      art.forEach((element) => {
+      const newArray = resp.data.articles[article]
+      newArray.forEach((element) => {
         cardContainer.appendChild(Card(element))
       })
     })
