@@ -23,8 +23,6 @@ const Header = (title, date, temp) => {
   span.textContent = date; 
   headerMain.appendChild(span);
 
-  console.log(headerMain);
-
   const h1 = document.createElement('h1');
   h1.textContent = title; 
   headerMain.appendChild(h1);
